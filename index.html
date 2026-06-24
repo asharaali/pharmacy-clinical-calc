@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pharmacy Clinical Calculator</title>
+  <meta name="description" content="Bedside pharmacy calculators: creatinine clearance (Cockcroft-Gault), BMI, BSA, and ideal/adjusted body weight." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Pharmacy Clinical Calculator</h1>
+    <p class="tagline">Cockcroft-Gault CrCl &middot; BMI &middot; BSA &middot; IBW / AdjBW</p>
+  </header>
+
+  <main>
+    <div class="units-toggle">
+      <span>Units</span>
+      <button id="unit-us" class="unit-btn active" type="button">US (lb / in)</button>
+      <button id="unit-si" class="unit-btn" type="button">Metric (kg / cm)</button>
+    </div>
+
+    <form id="calc-form" autocomplete="off">
+      <div class="field">
+        <label for="age">Age (years)</label>
+        <input type="number" id="age" min="0" max="120" step="1" placeholder="e.g. 64" />
+      </div>
+
+      <div class="field">
+        <label>Sex</label>
+        <div class="radio-row">
+          <label class="radio"><input type="radio" name="sex" value="male" checked /> Male</label>
+          <label class="radio"><input type="radio" name="sex" value="female" /> Female</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="weight" id="weight-label">Weight (lb)</label>
+        <input type="number" id="weight" min="0" step="0.1" placeholder="e.g. 187" />
+      </div>
+
+      <div class="field">
+        <label for="height" id="height-label">Height (in)</label>
+        <input type="number" id="height" min="0" step="0.1" placeholder="e.g. 70" />
+      </div>
+
+      <div class="field">
+        <label for="scr">Serum creatinine (mg/dL)</label>
+        <input type="number" id="scr" min="0" step="0.01" placeholder="e.g. 1.1" />
+      </div>
+    </form>
+
+    <section class="results" id="results" aria-live="polite">
+      <div class="result-card">
+        <span class="result-label">Creatinine Clearance</span>
+        <span class="result-value" id="r-crcl">—</span>
+        <span class="result-note" id="r-crcl-note">Cockcroft-Gault</span>
+      </div>
+      <div class="result-card">
+        <span class="result-label">BMI</span>
+        <span class="result-value" id="r-bmi">—</span>
+        <span class="result-note" id="r-bmi-note">kg/m&sup2;</span>
+      </div>
+      <div class="result-card">
+        <span class="result-label">BSA</span>
+        <span class="result-value" id="r-bsa">—</span>
+        <span class="result-note">Mosteller, m&sup2;</span>
+      </div>
+      <div class="result-card">
+        <span class="result-label">Ideal Body Weight</span>
+        <span class="result-value" id="r-ibw">—</span>
+        <span class="result-note">Devine, kg</span>
+      </div>
+      <div class="result-card">
+        <span class="result-label">Adjusted Body Weight</span>
+        <span class="result-value" id="r-abw">—</span>
+        <span class="result-note" id="r-abw-note">used when actual &gt; 1.2&times;IBW</span>
+      </div>
+    </section>
+
+    <p class="disclaimer">
+      Educational tool only. Not a substitute for clinical judgment or institutional dosing protocols.
+      Always verify against a primary reference.
+    </p>
+  </main>
+
+  <footer>
+    <p>Built by Ashar Ali &middot; <a href="https://github.com/asharaali">github.com/asharaali</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
