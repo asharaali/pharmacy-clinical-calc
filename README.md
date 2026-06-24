@@ -14,6 +14,21 @@ A fast, no-dependency bedside calculator for common pharmacy clinical math. Type
 | **Ideal Body Weight** | Devine |
 | **Adjusted Body Weight** | IBW + 0.4 × (actual − IBW), shown when actual > 1.2 × IBW |
 
+## Why it's useful
+
+- **Renal dosing** — many drugs are cleared by the kidneys, so the dose depends on creatinine clearance. Low CrCl → reduce or space out the dose (e.g. enoxaparin, DOACs, many antibiotics, gabapentin).
+- **Weight-based dosing** — obese patients shouldn't be dosed on actual weight for certain drugs; ideal/adjusted weight prevents overdosing (e.g. vancomycin, aminoglycosides).
+- **BSA dosing** — chemotherapy and several other agents are dosed per m² of body surface area, not by weight.
+- **BMI screening** — eligibility and dosing decisions, including GLP-1 (semaglutide/tirzepatide) coverage thresholds.
+- **Speed** — replaces juggling four separate formulas; everything updates live as you type.
+
+## Who it's for
+
+- **Pharmacy students & interns** — check your work and learn the weight-selection rules.
+- **Pharmacists** — a quick bedside number without opening a heavier clinical system.
+- **Prescribers & nurses** — sanity-check a renal or weight-based dose at the point of care.
+- **Patients** — understand their own BMI, body-weight, and kidney-function numbers.
+
 ### Weight selection for Cockcroft-Gault
 - Actual ≤ IBW → **actual weight**
 - IBW < actual ≤ 1.2 × IBW → **ideal weight**
