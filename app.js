@@ -153,7 +153,10 @@ function calculate() {
     el("r-crcl-note").textContent = `Cockcroft-Gault · ${weightUsed}`;
   } else {
     el("r-crcl").textContent = "—";
-    el("r-crcl-note").textContent = "Cockcroft-Gault";
+    const needsScr = !(isFinite(scr) && scr > 0);
+    el("r-crcl-note").textContent = needsScr
+      ? "needs serum creatinine"
+      : "needs age, weight & height";
   }
 }
 

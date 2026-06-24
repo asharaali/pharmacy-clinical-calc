@@ -107,6 +107,13 @@ input[type="number"]:focus {
   border-color: var(--accent);
 }
 
+.hint {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.35;
+  margin-top: 0.15rem;
+}
+
 .radio-row { display: flex; gap: 1rem; padding-top: 0.3rem; }
 .radio {
   display: flex;
